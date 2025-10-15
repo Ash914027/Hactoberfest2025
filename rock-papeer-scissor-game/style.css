@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,500;1,500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  color: #ffffff;
+  font-family: 'Winky Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: #000000;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.icons-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+/* updated Button styles with gradient */
+.rock-btn,
+.paper-btn,
+.scissors-btn {
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border-radius: 15px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  padding: 1.2rem 2.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+.rock-btn::before,
+.paper-btn::before,
+.scissors-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.rock-btn::before {
+  background: linear-gradient(45deg, #4caf50, #112b12);
+}
+.paper-btn::before {
+  background: linear-gradient(45deg, #2196f3, #062543);
+}
+.scissors-btn::before {
+  background: linear-gradient(45deg, #bea93b, #615b13);
+}
+.rock-btn:hover::before,
+.paper-btn:hover::before,
+.scissors-btn:hover::before {
+  opacity: 1;
+}
+/* Click Animation */
+.rock-btn:active,
+.paper-btn:active,
+.scissors-btn:active {
+  transform: scale(0.98) translateY(2px);
+}
+.play-game {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem 0;
+  perspective: 1000px;
+}
+.play-game p {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.hand-icon {
+  font-size: 8rem;
+  margin: 2rem 0;
+  display: block;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+/* Improved Shake Animation */
+.shakeUserHands {
+  animation: shakeUserHands 0.6s infinite ease-in-out;
+}
+.shakeComputerHands {
+  animation: shakeComputerHands 0.5s infinite ease-in-out;
+}
+@keyframes shakeUserHands {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+@keyframes shakeComputerHands {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+.hand-icon.active {
+  animation: handShake 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffd700;
+
+  .user-hand .hand-icon {
+    text-shadow: 0 0 15px rgba(57, 186, 61, 0.5);
+  }
+}
+.computer-hand .hand-icon {
+  text-shadow: 0 0 15px rgba(57, 186, 61, 0.5);
+}
+.result {
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  font-size: 1.7rem;
+}
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+/* popup content */
+.popup-content {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.popup-overlay.active .popup-content {
+  transform: scale(1);
+}
+/* popup title */
+.popup-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+/* popup close button */
+.popup-close-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #2196f3, #1976d2);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.popup-close-btn:hover {
+  background: linear-gradient(45deg, #1976d2, #2196f3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+.popup-close-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .icons-container {
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+  }
+  .hand-icon {
+    font-size: 4.4rem;
+  }
+  .result {
+    font-size: 0.75rem;
+    width: 25%;
+  }
+}
