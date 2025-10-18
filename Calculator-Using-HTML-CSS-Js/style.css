@@ -6,11 +6,13 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 .intro {
   text-align: center;
   color: white;
+  padding: 20px;
 }
 
 #openBtn {
@@ -20,6 +22,7 @@ body {
   padding: 12px 30px;
   border-radius: 12px;
   cursor: pointer;
+  border: none;
   transition: all 0.3s ease;
 }
 
@@ -34,12 +37,17 @@ body {
   top: 50%;
   transform: translateY(-50%);
   width: 400px;
-  height: 600px; /* bigger resolution */
+  max-width: 90vw;
+  height: 600px;
+  max-height: 90vh;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 20px;
   transition: right 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .calculator-container.active {
@@ -50,7 +58,7 @@ body {
 #display {
   width: 100%;
   height: 80px;
-  background-color: rgba(30,30,30,0.7);
+  background-color: rgba(30, 30, 30, 0.7);
   color: white;
   font-size: 32px;
   text-align: right;
@@ -58,6 +66,7 @@ body {
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 15px;
+  outline: none;
 }
 
 .buttons {
@@ -71,7 +80,7 @@ button {
   font-size: 24px;
   border: none;
   border-radius: 10px;
-  background-color: rgba(50,50,50,0.7);
+  background-color: rgba(50, 50, 50, 0.7);
   color: white;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -80,23 +89,61 @@ button {
 
 button:hover {
   transform: scale(1.05);
-  background-color: rgba(80,80,80,0.8);
+  background-color: rgba(80, 80, 80, 0.8);
 }
 
 /* Special buttons */
-button.red {           /* Clear button */
+button.red {
   background: linear-gradient(135deg, #ff3b30, #ff5e57);
-  color: white;
 }
 
-button.op {            /* Operators + - * ÷ % */
+button.op {
   background: linear-gradient(135deg, #ff9500, #ff6f00);
-  color: white;
 }
 
-button#equals {        /* Equal button */
+button#equals {
   grid-column: span 4;
   background: linear-gradient(135deg, #ff9500, #ff3b30);
-  color: white;
 }
 
+@media (max-width: 768px) {
+  #openBtn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+
+  .calculator-container {
+    width: 350px;
+    height: 520px;
+  }
+
+  #display {
+    height: 70px;
+    font-size: 26px;
+  }
+
+  button {
+    height: 60px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+  }
+
+  .calculator-container {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+    border-radius: 15px;
+    top: 55%;
+  }
+
+  #display {
+    height: 60px;
+    font-size: 22px;
+    padding: 10px;
+  }
+}
