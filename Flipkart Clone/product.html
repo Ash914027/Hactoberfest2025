@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flipkart Clone - Product Display</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f6;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .product-container {
+    max-width: 900px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-container h2 {
+    color: #212121;
+    font-size: 22px;
+  }
+
+  .product-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .price {
+    color: #388e3c;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .offers {
+    color: #2874f0;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .buy-btn {
+    display: inline-block;
+    background: #fb641b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+  }
+
+  .buy-btn:hover {
+    background: #d85a14;
+  }
+
+  @media (max-width: 768px) {
+    .product-container {
+      padding: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="product-container">
+  <h2>Apple MacBook Air M4 (16 GB/256 GB SSD/macOS Sequoia) – Sky Blue</h2>
+  
+  <!-- 👇 Add your image path below -->
+  <img src="Screenshot 2025-10-18 012359.png" alt="MacBook Air M4 Product">
+  
+  <p class="price">₹90,990 <span style="text-decoration: line-through; color: grey; font-size: 15px;">₹99,990</span> (8% off)</p>
+  <p class="offers">Bank Offer: 5% cashback on Axis Bank & SBI Cards</p>
+  
+  <button class="buy-btn">Buy Now</button>
+</div>
+
+</body>
+</html>
