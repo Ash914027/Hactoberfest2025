@@ -1,0 +1,136 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(gymphoto.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+
+}
+.container {
+    background-color:rgba(181, 174, 174, 0.5);
+    width: 400px;
+    height:500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(7px);
+    border-radius: 40px;
+    
+    box-shadow: 0 0 20px rgba(0, 0, 0, 3);
+    
+
+}
+h2 {
+    color: white;
+    text-transform: uppercase;
+    padding: 20px 0;
+    font-size: 2em;
+
+}
+.form-group {
+    width: 330px;
+    
+    margin: 30px 0;
+    position: relative;
+}
+.form-group input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    font-size: 1.2em;
+    color: white;
+    padding: 0 30px 0 10px;
+
+
+}
+.form-group label {
+    position: absolute;
+    top:50%;
+    left:10px;
+    transform: translateY(-50);
+    font-size: 1.2em;
+    color: white;
+    transform: translateY(-50%);
+
+
+
+}
+.form-group i {
+    position: absolute;
+    top:50% ;
+    right:20px;
+    color: white;
+
+
+}
+p {
+    text-align: center;
+    padding: 10p 0;
+    color: white;
+    
+}
+p>a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+p>a:hover {
+    text-decoration: underline;
+    font-family: italic;
+}
+#btn {
+    width:80%;
+    height:50px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 10px 0;
+    border: none;
+    font-size: 1.5em;
+    transition: 0.5s;
+
+}
+#btn:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    color:white;
+}
+.spacee {
+    width: 40vw;
+}
+.form-group input:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    
+}
+.form-group #email_error,
+.form-group #pass_error {
+    margin-top: 5px;
+    font-weight: 345px;
+    font-size: 18px;
+    color: #c62828;
+    background: rgba(255, 0, 0, 0.1);
+    text-align: center;
+    padding: 5px 8px;
+    display: none;
+    
+    
+    
+    
+}
+
+
+
+
+

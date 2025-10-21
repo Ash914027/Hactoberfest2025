@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="Stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="" id="loginForm" onsubmit="return validateform()" method="post">
+            <div class="form-group" mrthod="post" name="form" >
+               <input type="email" placeholder="Enter email"  name="email" required>
+               <lable for="" ></lable>
+               <div id="email_error">Please enter your email</div>
+               <i class="fa-solid fa-envelope"></i>
+               
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Enetr Password" name="password" required> 
+                <div id="pass_error">Enter your password</div>
+                
+                <lable for="" ></lable>
+                <i class="fa-solid fa-lock"></i>
+                
+                
+            </div>
+        </form>
+        <p class="spacee"><input type="checkbox" >Remember me &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="" class="lefty">  Forgot</a></p>
+        
+                <input id="btn" type="submit" value="login" name="submit">
+
+                <p class="space">Dont have account? <a href="Ragistration.html">Ragister</a></p>
+        </p>
+
+    </div>
+    <script src="index.js"></script>
+    
+    
+
+    
+</body>
+</html>
