@@ -52,11 +52,12 @@ body{
     color: white;
     border-radius: 1rem;
     border: none;
+    transition: 0.2s ease-in, transform 0.5s ease;
 }
 
 #reset:hover{
-    transition: 0.2s ease-in;
     background-color: #6c584c;
+    transform: scale(1.2);
 }
 
 #msg{
@@ -80,6 +81,11 @@ body{
     color: white;
     border-radius: 1rem;
     border: none;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+#new:hover{
+    background-color: #333333;
+    transform: scale(1.2);
 }
 
 .hide{
