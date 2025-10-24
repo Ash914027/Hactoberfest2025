@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper_Gallery</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            background-color: black;
+            color: white;
+            height: 6vh;
+            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        h1 {
+            flex-grow: 3;
+            margin: 10px;
+        }
+
+        nav {
+            flex-grow: 2;
+            display: flex;
+            justify-content: space-evenly;
+            font-family: cursive;
+
+
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: red;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            background-color: rgb(10, 99, 144);
+        }
+
+        img {
+            padding: 5px;
+            border-radius: 10px;
+            height: 100%;
+            width: 100%;
+            box-shadow: 5px grey;
+
+        }
+
+        img:nth-child(2) {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        img:nth-child(4) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        img:nth-child(5) {
+            grid-column: 3/5;
+        }
+
+        img:hover {
+            scale: 1.02;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            display: flex;
+        }
+
+        .og {
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        @media(max-width:400px) {
+            h1 {
+                font-size: 10px;
+            }
+
+            nav {
+                font-size: 10px;
+                display: flex;
+                justify-content: start;
+                text-align: start;
+                flex-grow: 1;
+                align-items: start;
+                align-items: start;
+                gap: 0%;
+            }
+
+            h2 {
+                font-size: small;
+            }
+
+            .grid {
+                display: grid;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <a href="#"><i>Home</i></a>
+            <a href="#"><i>About</i></a>
+            <a href="#"><i>Section</i></a>
+            <a href="#"><i>Login</i></a>
+        </nav>
+    </header>
+    <main>
+        <h2>Wallpaper Gallery</h2>
+        <section class="grid">
+            <img src="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:502,cw:1290,ch:1290,q:80,w:1290/RifjtkFLBEFgzkZqWEh69P.jpg"
+                alt="mars">
+            <img src="https://img.freepik.com/premium-photo/mars-space-3d-illustration_112293-490.jpg" alt="planet">
+            <img src="https://imageio.forbes.com/blogs-images/startswithabang/files/2017/01/Alone_in_Space_-_Astronomers_Find_New_Kind_of_Planet-1200x900.jpg?height=533&width=711&fit=bounds"
+                alt="galaxy">
+            <img src="https://cdn.mos.cms.futurecdn.net/c8aDkvbNawx6CMY2xmyzT7-1200-80.jpg" alt="random">
+            <img src="https://media.wired.com/photos/680109e364fff9e3ea489143/3:2/w_2560%2Cc_limit/GettyImages-2135792853%2520(1).jpg"
+                alt="aj">
+        </section>
+    </main>
+    <footer>
+        <nav class="og">
+            <a href="#">Products</a>
+            <a href="#">Terms</a>
+            <a href="#">Finance</a>
+            <a href="#">Contacts</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
