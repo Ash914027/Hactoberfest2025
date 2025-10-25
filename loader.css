@@ -1,0 +1,36 @@
+.loader {
+  display: inline-flex;
+  width: 90px;
+  aspect-ratio: 2;
+  animation: l10-0 1s linear infinite;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  flex: 1;
+  background: #574951;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  animation: l10-1 1s linear infinite;
+  transform-origin: right;
+}
+.loader:after {
+  scale: -1 1;
+  translate: -100% 0;
+  animation-direction: reverse;
+}
+@keyframes l10-0 {
+  0% {
+    translate: 0 -35.35%;
+  }
+  to {
+    translate: 0 35.35%;
+  }
+}
+@keyframes l10-1 {
+  0% {
+    rotate: -45deg;
+  }
+  to {
+    rotate: 45deg;
+  }
+}
