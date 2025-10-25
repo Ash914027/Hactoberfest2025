@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bangers", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+  background-color: #212121;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-size: x-large;
+}
+#canvas1 {
+  background: url("./all_images/background.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* set pointer-events to none on overlay image to make sure it doesn't interfere with mouse events on canvas */
+}
+
+#obstacles,
+#egg,
+#bull,
+#toad,
+#larva,
+#toads {
+  display: none;
+}
