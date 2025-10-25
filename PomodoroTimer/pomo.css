@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed;  would be used if we had scrollable page*/ 
+    transition: background 0.5s ease-in-out;
+}
+
+/* body.timer-running {
+    background: url('bg_2.png') no-repeat center/cover;
+} */
+
+
+body.work{
+    background: url('bg_2.png') no-repeat center/cover;
+}
+body.pausework{
+    background: url('background.jpg') no-repeat center/cover;
+}
+body.break{ 
+    background: url('bgbrk_1.jpg') no-repeat center/cover;
+}
+body.pausebreak{
+    background: url(bgbrk_2.jpg) no-repeat center/cover;
+}
+#clockContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#clock{
+    font-family: monospace;
+    font-size: 6rem;
+    font-weight: bold;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    background-color: hsla(0, 0%, 50%, 0.1);
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    color:whitesmoke;
+}
+
+
+#buttons{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.button{
+    background-color: hsla(0, 0%, 50%, 0.1); /* Transparent background */
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out, backdrop-filter 0.25s ease-in-out; /* Add backdrop-filter to transition */
+    border-radius: 5px;
+    font-size: 1.2em;
+    border: none;
+}
+.button:hover{
+    background-color : hsla(0, 0%, 40%, 0.121);
+    backdrop-filter: blur(5px); /* Apply blur on hover */
+}
+
+h1{
+    color:rgba(255, 255, 255, 0.712);
+}
