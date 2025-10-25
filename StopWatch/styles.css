@@ -1,0 +1,166 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #12121c, #1a1a2e, #0f0f18);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Animated background glow effect */
+body::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 255, 200, 0.15);
+  top: -100px;
+  right: -100px;
+  border-radius: 50%;
+  filter: blur(150px);
+  animation: pulse 8s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+/* Heading with glow */
+#heading {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #00e0ff;
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.8), 0 0 20px rgba(0, 224, 255, 0.4);
+  letter-spacing: 1px;
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stopwatch container with glassmorphism */
+.stopwatch {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  padding: 45px 70px;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Display time with glowing animation */
+#display-time {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+  color: #00ffc3;
+  text-shadow: 0 0 20px rgba(0, 255, 195, 0.6), 0 0 40px rgba(0, 255, 195, 0.3);
+  animation: glowPulse 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px rgba(0, 255, 195, 0.5);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(0, 255, 195, 0.9);
+  }
+}
+
+/* Buttons layout */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Button icons */
+.buttons img {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+/* Hover + click animations */
+.buttons img:hover {
+  transform: scale(1.15);
+  background: rgba(0, 255, 195, 0.15);
+  box-shadow: 0 0 15px rgba(0, 255, 195, 0.4);
+}
+
+.buttons img:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 20px rgba(0, 255, 195, 0.7);
+}
+
+/* Responsive design */
+@media (max-width: 650px) {
+  #heading {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+  }
+
+  .stopwatch {
+    padding: 30px 40px;
+  }
+
+  #display-time {
+    font-size: 2.5rem;
+  }
+
+  .buttons {
+    gap: 20px;
+  }
+
+  .buttons img {
+    width: 50px;
+    height: 50px;
+  }
+}
