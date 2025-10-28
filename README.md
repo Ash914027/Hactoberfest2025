@@ -3,7 +3,7 @@
 # 🎉 Hacktoberfest 2025 – Beginner Friendly Repositories 🌱
 
 <div align="center">
-
+This repository actively welcomes contributors from all backgrounds — especially first-time open source contributors.
 </div>
 
 <p align="center">
