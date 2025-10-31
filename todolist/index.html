@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editable To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <!---- <button class="toggle-theme" onclick="toggleTheme()">🌓 Theme</button>   --->
+    <h1 style="color: white;">📝 To-Do List</h1>
+
+    <div class="todo-container">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="taskInput">📝 Task:</label>
+                <input type="text" id="taskInput" placeholder="Enter task">
+            </div>
+
+            <div class="form-group">
+                <label for="dueDate">📅 Due Date:</label>
+                <input type="date" id="dueDate">
+            </div>
+
+            <div class="form-group">
+                <label for="priority">⚠️ Priority:</label>
+                <select id="priority">
+                    <option value="High">High Priority</option>
+                    <option value="Medium">Medium Priority</option>
+                    <option value="Low">Low Priority</option>
+                </select>
+            </div>
+
+            <button id="addBtn" onclick="addTask()">Add Task</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Task</th>
+                    <th>Added Date & Time</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="taskBody">
+                <!-- Task rows will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"> </script>
+
+</body>
+
+</html>
