@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate a<br><span>Random Password</span></h1>
+        
+        <div class="display">
+            <input type="text" id="password" placeholder="Password" >
+            <img src="images/copy.png" alt="Copy">
+        </div>
+        
+        <button>
+            <img src="images/generate.png" alt="">Generate Password
+        </button>
+    </div>
+    <script>
+           const passwordBox = document.getElementById("password");
+    const generateBtn = document.querySelector("button");
+    const copyIcon = document.querySelector(".display img");
+
+    const numbers = "1234567890";
+    const letters = "abcdefghijklmnopqrstuvwxyz";
+    const symbols = "~!@#$%^&*_-+";
+    const upperletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    const allChars = numbers + letters + symbols + upperletters;
+
+    function generatePassword(){
+        let password="";
+        for(let i=0;i<12;i++){
+         let randomChar= allChars[Math.floor(Math.random()*allChars.length)];
+         password+=randomChar;
+        }
+        return password;
+    }
+     
+    generateBtn.addEventListener("click",()=>{
+        passwordBox.value = generatePassword();
+    });
+
+    copyIcon.addEventListener("click",()=>{
+        password.select();
+        document.execCommand("copy");
+        alert("Password copied to clipboard");
+    });
+
+    </script>
+</body>
+</html>
