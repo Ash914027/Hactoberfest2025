@@ -147,3 +147,8 @@ You can find your name in the [Contributors.md](./Contributors.md) file.
 
 > “The journey of a thousand commits begins with a single pull request.” 🚀
 
+## 👋 Hacktoberfest Contribution
+
+This repository is part of Hacktoberfest 2025.  
+Happy contributing! 🚀
+
